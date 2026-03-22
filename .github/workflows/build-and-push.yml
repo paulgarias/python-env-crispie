@@ -13,7 +13,7 @@ jobs:
         run: echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u paulgarias --password-stdin
 
       - name: Build image
-        run: docker build -t ghcr.io/paulgarias/python-env-crispie:latest .
+        run: docker build -t ghcr.io/paulgarias/python-env-crispie:latest -f docker/Dockerfile .
 
       - name: Push image
         run: docker push ghcr.io/paulgarias/python-env-crispie:latest
